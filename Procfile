@@ -1,2 +1,2 @@
-web: ./launch.sh 
-heroku ps:scale web=1
+web: ./launch.sh
+heroku ps:scale web=1 
