@@ -50,9 +50,9 @@ def user_index():
                 "id":user.id,
                 "registered_on":user.registered_on
             })
-            res = {"users":users}
     except Exception as e:
         print(e)
+    res = {"users":users}
     return make_response(jsonify(res))
 
 from project.server.auth.views import auth_blueprint
