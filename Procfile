@@ -1,4 +1,2 @@
-web: gunicorn manage:app
+web: ./launch.sh 
 heroku ps:scale web=1
-
-
