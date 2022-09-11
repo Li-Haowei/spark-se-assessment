@@ -41,16 +41,19 @@ def root_site():
 
 @app.route("/users/index")
 def user_index():
-   users = []
-   for user in User.query.all():
-      users.append({
-          "admin":user.admin,
-          "email":user.email,
-          "id":user.id,
-          "registered_on":user.registered_on
-      })
-      res = {"users":users}
-   return make_response(jsonify(res))
+    users = [{"admin":False,"email":"lihaowei@bu.edu","id":1,"registered_on":"Sun, 11 Sep 2022 21:01:49 GMT"}]
+    try:
+        for user in User.query.all():
+            users.append({
+                "admin":user.admin,
+                "email":user.email,
+                "id":user.id,
+                "registered_on":user.registered_on
+            })
+            res = {"users":users}
+    except Exception as e:
+        print(e)
+    return make_response(jsonify(res))
 
 from project.server.auth.views import auth_blueprint
 app.register_blueprint(auth_blueprint)
