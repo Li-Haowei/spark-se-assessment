@@ -5,6 +5,6 @@ export APP_SETTINGS="project.server.config.DevelopmentConfig"
 flask db init
 flask db migrate
 flask db upgrade
-#flask run --host=0.0.0.0 --port=5000
-#flask run
-gunicorn project.server.__init__:app
+# flask run --host=127.0.0.1 --port=5000
+# flask run 
+flask run --host=$HOST --port=$PORT
