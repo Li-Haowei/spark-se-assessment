@@ -41,7 +41,7 @@ def root_site():
 
 @app.route("/users/index")
 def user_index():
-   users = [{"admin":false,"email":"IT WORKS","id":1,"registered_on":"Sun, 11 Sep 2022 20:51:56 GMT"}]
+   users = []
    for user in User.query.all():
       users.append({
           "admin":user.admin,
